@@ -47,3 +47,19 @@ document.getElementById("btnPersegiPanjang").addEventListener("click", function(
     document.getElementById("formPersegiPanjang").style.display = "block";
     document.getElementById("formPersegi").style.display = "none";
 });
+
+// script.js
+
+function resetForm(formId) {
+    var form = document.getElementById(formId);
+
+    var inputElements = form.getElementsByTagName('input');
+    for (var i = 0; i < inputElements.length; i++) {
+        inputElements[i].value = '';
+    }
+
+    var hasilElement = document.getElementById('hasil' + formId.replace('form', ''));
+    if (hasilElement) {
+        hasilElement.innerHTML = '';
+    }
+}
